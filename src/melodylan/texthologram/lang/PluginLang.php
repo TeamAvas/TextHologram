@@ -51,7 +51,7 @@ final class PluginLang{
 	 * @return string
 	 */
 	public function translate(string $key, array $replaced = [], bool $pushPrefix = true): string{
-		$text = $pushPrefix ? $this->translates['prefix'] ?? '' : '';
+		$text = $pushPrefix ? $this->translates['prefix'] . ' ' ?? '' : '';
 		if(!isset($this->translates[$key])){
 			throw new InvalidArgumentException("No translation found for $key.");
 		}
